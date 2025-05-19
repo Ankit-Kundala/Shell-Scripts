@@ -1,7 +1,7 @@
-🔴#Problem Statement :
+🔴# Problem Statement :
 Client was using ELK stack to store all the Logs files of the Application as in Application Microservices log(100s of services running), Kubernetes control plane logs, and Infrastructure Log files. Infrastructed logs consisted mostly of Jenkins and this Jenkins had most log files comming for the CI/CD pipeline commits( approx 500 commits/perday) that too from the lower UAT environments and Staging environment and they were other enviroments like Pre-Prod and Production. This UAT and Staging Environment logs , their Build failures and other errors were sent through gmail and Slack and get fixed too and the team would rarely do log analysis in this Jenkins log-files. They were holding storing this log-files in ELK stack just as a Backup. As ELK here is not so needed as the failures would already sent through gmail and slack and would get fixed.
 
-💡#Solution :
+💡# Solution :
 So, the Focus was to shift the UAT and Staging envirnoment logs to S3 Buckets to reduce the cost of ELK stack . For more cost-reduction Log files can be stored in AWS Glacier and Deep archieve.
 
 At the end of the day,the Shell script will run manually or automatically through cron jobs and trigger the Jenkins, this will pull all the Jenkins log-files and store in S3 Buckets. If we have number Pipelines running this Shell script would loop in to each Pipeline and collect data and store in S3 Buckets.

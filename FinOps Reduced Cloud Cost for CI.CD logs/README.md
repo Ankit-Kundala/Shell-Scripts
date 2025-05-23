@@ -93,7 +93,7 @@ Run this pipe and log-file would be created.
 Amazon S3 > Buckets > Create bucket \> Jenkins-Falcon
 ![Screenshot 2025-05-08 231420](https://github.com/user-attachments/assets/591f47b7-e127-42c6-ab0c-183b618eeb26)
   
-##Step 5 : Run this Script
+## Step 6 : Run this Script
 ```
 ./optimazation.sh
 ```
